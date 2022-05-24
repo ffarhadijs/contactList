@@ -1,0 +1,57 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contactForm h1{
+	font-size: 32px;
+	color: white;
+	background-color: #252946;
+	padding: 10px 30px;
+	border-radius: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form input {
+  width: 280px;
+  height: 12px;
+  padding: 12px;
+  margin: 15px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 10px;
+}
+.form input:focus {
+  border: 2px solid #774b81;
+}
+.form button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  background-color: #bd64a7;
+  margin: 7px;
+}
+.form button img {
+  width: 40px;
+  height: 40px;
+}
+.form button:active {
+  background-color: #774b81;
+}
