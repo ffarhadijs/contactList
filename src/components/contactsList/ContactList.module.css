@@ -8,7 +8,6 @@
 }
 .contactList h2{
     text-align: center;
-
     font-size: 32px;
 	color: white;
 	background-color: #252946;
@@ -20,13 +19,20 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 450px;
     height: 70px;
     margin: 20px 0;
     background-color: #252946;
     border-radius: 20px;
     color: white;
 }
+@media screen and (max-width:576px) {
+    .contact{
+        width: 350px;
+        height: 100px;
+    }
+}
+
 .sectionOne{
     display: flex;
     flex-direction: row;

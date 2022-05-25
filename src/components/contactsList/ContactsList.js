@@ -25,7 +25,6 @@ const ContactsList = (props) => {
                   </div>
                 </div>
               </div>
-
               <div className={styles.btns}>
                 <button
                   className={styles.btn}
