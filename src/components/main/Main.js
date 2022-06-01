@@ -7,7 +7,11 @@ import styles from "./Main.module.css";
 const Main = () => {
   const [contacts, setContacts] = useState([]);
   const [editId, setEditId] = useState(null);
-  const [inputData, setInputData] = useState({ name: "", number: "" });
+  const [inputData, setInputData] = useState({
+    name: "",
+    number: "",
+    gender: "",
+  });
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
@@ -22,7 +26,7 @@ const Main = () => {
   const addContact = () => {
     if (inputData.number.length < 8) {
       alert("your phone number length at least should be 8 characters");
-    } else if (!inputData.name || !inputData.number) {
+    } else if (!inputData.name || !inputData.number || !inputData.gender) {
       alert("please filled out the inputs");
     } else {
       setContacts([
@@ -30,6 +34,7 @@ const Main = () => {
         {
           name: inputData.name,
           number: inputData.number,
+          gender: inputData.gender,
           id: Math.floor(Math.random() * 1000),
         },
       ]);

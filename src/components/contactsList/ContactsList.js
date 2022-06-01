@@ -1,5 +1,6 @@
 import React from "react";
-import profile from "../../images/profile.png";
+import man from "../../images/man.png";
+import woman from "../../images/woman.png";
 import removeContact from "../../images/removeContact.png";
 import editContact from "../../images/editContact.png";
 import styles from "./ContactList.module.css";
@@ -12,17 +13,21 @@ const ContactsList = (props) => {
         <div>
           {props.searchedContact.map((contact) => (
             <div key={contact.id} className={styles.contact}>
-              <div className={styles.sectionOne}>
+              <div className={styles.infosection}>
                 <div className={styles.profileImage}>
-                  {<img src={profile} className={styles.image} />}
+                  {contact.gender === "male" ? (
+                    <img src={man} className={styles.image} />
+                  ) : (
+                    <img src={woman} className={styles.image} />
+                  )}
                 </div>
                 <div className={styles.text}>
-                  <div>
+                  <p>
                     Name: <span>{contact.name}</span>
-                  </div>
-                  <div>
+                  </p>
+                  <p>
                     Number: <span>{contact.number}</span>
-                  </div>
+                  </p>
                 </div>
               </div>
               <div className={styles.btns}>

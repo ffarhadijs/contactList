@@ -3,6 +3,7 @@ import styles from "./ContactsForm.module.css";
 import addContact from "../../images/addContact.png";
 import editContact from "../../images/editContact.png";
 
+
 const ContactsForm = (props) => {
   const inputRef = React.useRef();
 
@@ -17,13 +18,16 @@ const ContactsForm = (props) => {
   const addSubmit = (e) => {
     e.preventDefault();
     props.addContact(props.inputData);
-    props.setInputData({ name: "", number: "" });
+    props.setInputData({ name: "", number: "", gender: "" });
   };
 
   return (
     <div className={styles.contactForm}>
       {props.editId ? <h1>Edit contacts list</h1> : <h1>Add contacts list</h1>}
-      <form className={styles.form} onSubmit={props.editId ? (e) => props.editSubmit(e) : addSubmit}>
+      <form
+        className={styles.form}
+        onSubmit={props.editId ? (e) => props.editSubmit(e) : addSubmit}
+      >
         <input
           minLength={3}
           ref={inputRef}
@@ -40,6 +44,26 @@ const ContactsForm = (props) => {
           value={props.inputData.number}
           onChange={changeHandler}
         />
+
+        <label htmlFor="male"><strong>Male: </strong></label>
+        <input
+          type="radio"
+          name="gender"
+          value="male"
+          id="male"
+          onChange={changeHandler}
+          checked={props.inputData.gender === "male"}
+          />
+          <label htmlFor="female"><b>Female: </b></label>
+        <input
+          type="radio"
+          name="gender"
+          value="female"
+          id="female"
+          onChange={changeHandler}
+          checked={props.inputData.gender === "female"}
+          />         
+
         {props.editId ? (
           <button type="submit">{<img src={editContact} />}</button>
         ) : (
